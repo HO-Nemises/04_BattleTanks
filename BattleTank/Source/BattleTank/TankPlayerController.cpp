@@ -14,7 +14,7 @@ void ATankPlayerController::BeginPlay()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Player Poseesing : %s"),*(PlayerTank->GetName()));
+		UE_LOG(LogTemp, Warning, TEXT("Player Posessing : %s"),*(PlayerTank->GetName()));
 	}
 
 }
