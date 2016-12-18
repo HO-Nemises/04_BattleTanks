@@ -10,7 +10,7 @@ void ATankPlayerController::BeginPlay()
 
 	if (!PlayerTank)
 	{
-		UE_LOG(LogTemp, Error, TEXT("No Possesed Tank"));
+		UE_LOG(LogTemp, Error, TEXT("Player No Possesed Tank"));
 	}
 	else
 	{
@@ -19,9 +19,24 @@ void ATankPlayerController::BeginPlay()
 
 }
 
+void ATankPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	AimTowardsCrosshair();
+
+}
+
 ATank* ATankPlayerController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
 
+
+}
+
+void ATankPlayerController::AimTowardsCrosshair()
+{
+	if (!GetControlledTank()) { return; }
+
+	// Get word location if linetrace through crosshair
 
 }
