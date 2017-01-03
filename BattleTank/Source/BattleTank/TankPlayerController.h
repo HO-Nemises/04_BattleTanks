@@ -19,8 +19,10 @@ private:
 	
 	void BeginPlay() override;
 
-
 	void AimTowardsCrosshair();
+
+	bool GetSightRayHitLocation(FVector& HitLocation) const;
+
 
 public:
 	// Called every frame
