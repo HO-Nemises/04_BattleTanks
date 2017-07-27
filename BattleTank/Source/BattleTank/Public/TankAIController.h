@@ -20,4 +20,11 @@ private:
 	void BeginPlay() override;
 	
 	ATank* GetPlayertank() const;
+
+	void AimTowardPlayer();
+
+public:
+	// Called every frame
+	virtual void Tick(float DeltaSeconds) override;
+
 };

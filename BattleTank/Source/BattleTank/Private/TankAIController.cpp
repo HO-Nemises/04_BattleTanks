@@ -2,6 +2,7 @@
 
 #include "BattleTank.h"
 #include "TankAIController.h"
+#include "../Public/TankAIController.h"
 
 
 void ATankAIController::BeginPlay()
@@ -22,10 +23,31 @@ void ATankAIController::BeginPlay()
 
 }
 
+void ATankAIController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	if (GetPlayertank())
+	{
+		// TODO move towards player
+
+		// Aim towards player
+		AimTowardPlayer();
+	
+		// Fire if Ready
+
+	}
+}
+
+
 ATank* ATankAIController::GetPlayertank() const
 {
 	return Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
 
+}
+
+void ATankAIController::AimTowardPlayer()
+{
+	GetControlledTank()->AimAt(GetPlayertank()->GetActorLocation());
 }
 
 
